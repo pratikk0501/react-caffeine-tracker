@@ -9,7 +9,7 @@ function Authentication(props) {
   const [isAuthenticating, setIsAuthenticating] = useState(false);
   const [error, setError] = useState(null);
 
-  const { signup, login } = useAuth();
+  const { signup, login, resetPassword } = useAuth();
 
   async function handleAuthenticate() {
     if (
@@ -80,6 +80,18 @@ function Authentication(props) {
         >
           <p>{registered ? "Sign Up!" : "Login"}</p>
         </button>
+        {registered && (
+          <button
+            onClick={() => {
+              setError(
+                "✅Password reset email sent! Please check spam folder if cannot find in inbox."
+              );
+              resetPassword();
+            }}
+          >
+            Forgot password?
+          </button>
+        )}
       </div>
     </>
   );

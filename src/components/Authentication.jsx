@@ -86,7 +86,7 @@ function Authentication(props) {
               setError(
                 "✅Password reset email sent! Please check spam folder if cannot find in inbox."
               );
-              resetPassword();
+              resetPassword(email);
             }}
           >
             Forgot password?

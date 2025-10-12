@@ -35,7 +35,7 @@ function Authentication(props) {
       handleCloseModal();
     } catch (error) {
       console.log(error.message);
-      setError(error.message);
+      setError(`❌${error.message}`);
     } finally {
       setIsAuthenticating(false);
     }
@@ -49,7 +49,7 @@ function Authentication(props) {
           ? "Sign in to your account!"
           : "Start your caffeine detox journey now!"}
       </p>
-      {error && <p>❌ {error}</p>}
+      {error && <p>{error}</p>}
       <input
         value={email}
         onChange={(e) => {
